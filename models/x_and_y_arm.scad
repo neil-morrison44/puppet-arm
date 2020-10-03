@@ -6,12 +6,13 @@ $radius = 81.1 / 2;
 
 $cupHeight = 2.5 + 1;
 $cupScrewHole = 1.6 / 2;
-$cupRadius = 4.7 / 2;
+$cupRadius = 4.75 / 2;
 
 $armHeight = 2;
 
 $gripCount = 6 * 4;
 $gripRadius = 0.15;
+$trackRadius = $cupRadius / 2;
 
 module cup(){
   difference(){
@@ -46,9 +47,9 @@ module arm() {
   translate([0,0,-0.25])
   hull(){
     translate([$cupRadius * 3, 0, 0])
-    cylinder($armHeight + 1,$cupRadius * 1.5,$cupRadius * 1.5);
+    cylinder($armHeight + 1,$trackRadius,$trackRadius);
     translate([$radius * 1.95,0,0])
-      cylinder($armHeight + 1,$cupRadius * 1.5,$cupRadius * 1.5);
+      cylinder($armHeight + 1,$trackRadius,$trackRadius);
   }
 }
 }
